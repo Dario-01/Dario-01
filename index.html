@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voiceflow Assistant</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Minimal Chatbot</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="siriwave.umd.min.js"></script>
 </head>
 <body>
-    <div id="background"></div>
-    <div id="overlay"></div>
-    <div id="credits"></div>
-    
-    <div id="input-container">
-        <div id="wave"></div>
-        <input id="user-input" type="text" placeholder="Type here...">
+    <div class="container">
+        <h1>Chatbot</h1>
+        <div id="chat-box">
+            <div id="messages"></div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type a message..." autofocus>
+        <button onclick="sendMessage()">Send</button>
     </div>
     
-    <div id="response-container"></div>
-    
-    <script id="vfassistant" data-version="development" src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
