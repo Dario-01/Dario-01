@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="chat-container">
-        <h2>Chat with Bot</h2>
-        <div id="chat-box">
-            <div id="messages"></div>
-        </div>
-        <div class="input-container">
-            <input type="text" id="user-input" placeholder="Type a message..." autofocus>
+    <div id="chat-container">
+        <div id="messages"></div>
+        <div id="input-container">
+            <input id="user-input" type="text" placeholder="Type a message..." autocomplete="off">
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
