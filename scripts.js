@@ -69,18 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  const imagesList = [
-    'pawel-czerwinski-SVVCP23JFyg-unsplash.jpg',
-    'pawel-czerwinski-vI5XwPbGvmY-unsplash.jpg',
-    'pawel-czerwinski-83y-Ud-UHoo-unsplash.jpg',
-    'pawel-czerwinski-eiKm9AmXxZo-unsplash.jpg',
-    'pawel-czerwinski-iQcqqTBxMFk-unsplash.jpg',
-    'pawel-czerwinski-db2y7AD7s7M-unsplash.jpg',
-    'pawel-czerwinski-WZWxuwX-ce4-unsplash.jpg',
-    'pawel-czerwinski-keVhq8uU23M-unsplash.jpg',
-    'pawel-czerwinski-Ulbtb_46xlc-unsplash.jpg',
-    'pawel-czerwinski-FAlYVtV1kRg-unsplash.jpg',
-  ]
+const imagesList = [
+    'images/pawel-czerwinski-SVVCP23JFyg-unsplash.jpg',
+    'images/pawel-czerwinski-vI5XwPbGvmY-unsplash.jpg',
+    'images/pawel-czerwinski-83y-Ud-UHoo-unsplash.jpg',
+    'images/pawel-czerwinski-eiKm9AmXxZo-unsplash.jpg',
+    'images/pawel-czerwinski-iQcqqTBxMFk-unsplash.jpg',
+    'images/pawel-czerwinski-WZWxuwX-ce4-unsplash.jpg',
+    'images/pawel-czerwinski-keVhq8uU23M-unsplash.jpg',
+    'images/pawel-czerwinski-Ulbtb_46xlc-unsplash.jpg',
+    'images/pawel-czerwinski-FAlYVtV1kRg-unsplash.jpg'
+]
 
   // Load a random background from the imagesList array
   function getRandomImage() {
