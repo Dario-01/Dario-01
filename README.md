@@ -1,7 +1,7 @@
-# Voiceflow Chatbot Web App
+# Dario-01
 
 ## Description
-A web-based chatbot interface using Voiceflow Dialog API with interactive UI and dynamic backgrounds.
+Legal AI assisstant for your compromisorry clause.
 
 ## Features
 - Real-time conversational AI 
@@ -22,4 +22,4 @@ A web-based chatbot interface using Voiceflow Dialog API with interactive UI and
 - SiriWave
 
 ## License
-[Your chosen license, e.g., MIT]
+[by dArio Amini]
