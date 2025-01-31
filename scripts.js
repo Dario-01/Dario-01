@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 const imagesList = [
-    images/pawel-czerwinski-FAlYVtV1kRg-unsplash.jpg
+    './images/pawel-czerwinski-Ulbtb_46xlc-unsplash.jpg'
 ]
 
   // Load a random background from the imagesList array
