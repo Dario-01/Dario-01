@@ -70,15 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 const imagesList = [
-    'images/pawel-czerwinski-SVVCP23JFyg-unsplash.jpg',
-    'images/pawel-czerwinski-vI5XwPbGvmY-unsplash.jpg',
-    'images/pawel-czerwinski-83y-Ud-UHoo-unsplash.jpg',
-    'images/pawel-czerwinski-eiKm9AmXxZo-unsplash.jpg',
-    'images/pawel-czerwinski-iQcqqTBxMFk-unsplash.jpg',
-    'images/pawel-czerwinski-WZWxuwX-ce4-unsplash.jpg',
-    'images/pawel-czerwinski-keVhq8uU23M-unsplash.jpg',
-    'images/pawel-czerwinski-Ulbtb_46xlc-unsplash.jpg',
-    'images/pawel-czerwinski-FAlYVtV1kRg-unsplash.jpg'
+    images/pawel-czerwinski-FAlYVtV1kRg-unsplash.jpg
 ]
 
   // Load a random background from the imagesList array
