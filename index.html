@@ -6,7 +6,7 @@
     <title>Voiceflow Assistant</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/siriwave@0.7.0/dist/siriwave.umd.min.js"></script>
+    <script src="siriwave.umd.min.js"></script>
 </head>
 <body>
     <div id="background"></div>
@@ -18,7 +18,6 @@
       <input id="user-input" type="text">
     </div>
     <div id="response-container"></div>
-    <div id="vfassistant" data-version="development"></div>
-    <script src="scripts.js"></script>
+    <script data-version="development" src="scripts.js" id="vfassistant"></script>
 </body>
 </html>
