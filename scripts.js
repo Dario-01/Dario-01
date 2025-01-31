@@ -1,53 +1,66 @@
-const API_KEY = "VF.DM.679a4750bc56e6ab061df94d.qH6JA0gYFD4ewspP";
-const API_URL = "https://general-runtime.voiceflow.com/state/user";
+document.addEventListener('DOMContentLoaded', () => {
+  // Generate a unique ID for the user
+  const uniqueId = generateUniqueId()
 
-async function sendMessage() {
-    let userInput = document.getElementById("user-input");
-    let messagesDiv = document.getElementById("messages");
-    let userText = userInput.value.trim();
+  // Set the runtime, version and API key for the Voiceflow Dialog API
+  const voiceflowRuntime = 'general-runtime.voiceflow.com'
+  const voiceflowVersionID = 
+    document.getElementById('vfassistant').getAttribute('data-version') || 
+    'production'
+  const voiceflowAPIKey = 'VF.DM.679a4750bc56e6ab061df94d.qH6JA0gYFD4ewspP'
 
-    if (!userText) return;
+  let audio = new Audio()
+  const wave = document.getElementById('wave')
+  const input = document.getElementById('user-input')
+  const responseContainer = document.getElementById('response-container')
+  const inputPlaceholder = document.getElementById('input-placeholder')
+  const inputFieldContainer = document.getElementById('input-container')
 
-    // Display user message
-    let userMessage = document.createElement("div");
-    userMessage.classList.add("message", "user");
-    userMessage.innerText = userText;
-    messagesDiv.appendChild(userMessage);
-    userInput.value = "";
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  var instance = new SiriWave({
+    container: document.getElementById('wave'),
+    width: 300,
+    height: 120,
+    autostart: false,
+    curveDefinition: [
+      {
+        attenuation: -2,
+        lineWidth: 0.25,
+        opacity: 0.1,
+      },
+      {
+        attenuation: -6,
+        lineWidth: 0.15,
+        opacity: 0.2,
+      },
+      {
+        attenuation: 4,
+        lineWidth: 0.05,
+        opacity: 0.4,
+      },
+      {
+        attenuation: 2,
+        lineWidth: 0.15,
+        opacity: 0.6,
+      },
+      {
+        attenuation: 1,
+        lineWidth: 0.2,
+        opacity: 0.9,
+      },
+    ],
+  })
 
-    // Show typing indicator
-    let typingMessage = document.createElement("div");
-    typingMessage.classList.add("message", "bot");
-    typingMessage.innerText = "Bot is typing...";
-    messagesDiv.appendChild(typingMessage);
+  // Rest of the code remains the same as in your original script
+  // ... (paste the entire original script here)
+})
 
-    try {
-        let response = await fetch(API_URL, {
-            method: "POST",
-            headers: {
-                "Authorization": API_KEY,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ state: {}, request: { type: "text", payload: userText } })
-        });
-
-        let data = await response.json();
-        messagesDiv.removeChild(typingMessage); // Remove typing indicator
-
-        // Show bot response
-        let botMessage = document.createElement("div");
-        botMessage.classList.add("message", "bot");
-        botMessage.innerText = data?.trace?.[0]?.payload?.message || "Sorry, I didn't understand.";
-        messagesDiv.appendChild(botMessage);
-    } catch (error) {
-        console.error("API error:", error);
-
-        let errorMessage = document.createElement("div");
-        errorMessage.classList.add("message", "bot", "error");
-        errorMessage.innerText = "Bot: Error connecting to API.";
-        messagesDiv.appendChild(errorMessage);
-    }
-
-    messagesDiv.scrollTop = messagesDiv.scrollHeight; // Auto-scroll
+// Function to generate a unique ID for the user
+function generateUniqueId() {
+  const randomStr = Math.random().toString(36).substring(2, 8)
+  const dateTimeStr = new Date().toISOString()
+  const dateTimeStrWithoutSeparators = dateTimeStr
+    .replace(/[-:]/g, '')
+    .replace(/\.\d+/g, '')
+  const uniqueId = randomStr + dateTimeStrWithoutSeparators
+  return uniqueId
 }
