@@ -120,7 +120,13 @@ document.addEventListener('DOMContentLoaded', () => {
         input.classList.add('fade-out')
 
         // Fade out previous content
-        responseContainer.style.opacity = '0'
+        responseContainer.style.opacity = '1'
+        if (responseContainer.offsetHeight > window.innerHeight * 0.7) {
+  window.scrollTo({
+    top: responseContainer.offsetHeight,
+    behavior: 'smooth'
+  });
+}
         // Check if any audio is currently playing
         if (audio && !audio.paused) {
           // If audio is playing, pause it
