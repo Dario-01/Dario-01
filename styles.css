@@ -6,16 +6,16 @@
 
 body, html {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  overflow-x: hidden;
 }
 
 #background {
   position: fixed;
   width: 110%;
   height: 110%;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,7 +38,7 @@ body, html {
 }
 
 #input-placeholder {
-  position: absolute;
+  position: fixed;
   bottom: 15%;
   left: 50%;
   transform: translate(-50%, 0);
@@ -47,21 +47,23 @@ body, html {
   font-size: 18px;
   opacity: 0;
   transition: opacity 0.5s;
+  z-index: 2;
 }
 
 #input-container {
-  position: absolute;
+  position: fixed;
   bottom: 15%;
   left: 50%;
   transform: translate(-50%, 0);
   width: 60%;
   opacity: 0;
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.80);
+  z-index: 2;
 }
 
 #wave {
   position: absolute;
-  top: calc(85% - 53.97px);
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -69,12 +71,7 @@ body, html {
 }
 
 #user-input {
-  position: absolute;
-  bottom: 15%;
-  left: 50%;
-  font-weight: 300;
-  font-family: 'Open Sans', sans-serif;
-  transform: translate(-50%, 0);
+  position: relative;
   width: 100%;
   background: transparent;
   border: none;
@@ -82,25 +79,31 @@ body, html {
   color: rgba(255, 255, 255, 0.70);
   font-size: 18px;
   text-align: center;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
 }
 
 #response-container {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   max-width: 50%;
-  max-height: 50%;
+  width: 100%;
   text-align: center;
   color: rgba(255, 255, 255, 0.90);
   font-weight: 300;
   font-size: 20px;
   opacity: 0;
   transition: opacity 0.8s;
+  margin-bottom: 200px;
+  padding: 20px;
+  min-height: 100px;
 }
 
 #credits {
-  position: absolute;
+  position: fixed;
   bottom: 2%;
   left: 50%;
   transform: translate(-50%, 0);
@@ -109,6 +112,7 @@ body, html {
   font-size: 10px;
   opacity: 0;
   transition: opacity 5s;
+  z-index: 2;
 }
 
 a {
@@ -129,7 +133,6 @@ a {
   from { opacity: 1; }
   to { opacity: 0; }
 }
-
 
 #user-input.fade-out {
   animation: fadeOut 0.5s forwards;
