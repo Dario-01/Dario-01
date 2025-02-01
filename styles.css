@@ -6,7 +6,7 @@
 
 body, html {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   overflow-x: hidden;
@@ -38,8 +38,7 @@ body, html {
 }
 
 #input-placeholder {
-  position: fixed;
-  bottom: 15%;
+  position: absolute; /* Changed from fixed to absolute */
   left: 50%;
   transform: translate(-50%, 0);
   color: rgba(255, 255, 255, 0.6);
@@ -48,14 +47,13 @@ body, html {
   opacity: 0;
   transition: opacity 0.5s;
   z-index: 2;
+  margin-top: 20px; /* Added margin top */
 }
 
 #input-container {
-  position: fixed;
-  bottom: 15%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  position: relative; /* Changed from fixed to relative */
   width: 60%;
+  margin: 40px auto; /* Center container and add margin */
   opacity: 0;
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.80);
   z-index: 2;
@@ -86,20 +84,14 @@ body, html {
 
 #response-container {
   position: relative;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 50%;
-  width: 100%;
+  width: 50%;
+  margin: 100px auto 20px auto; /* Center container and add margins */
   text-align: center;
   color: rgba(255, 255, 255, 0.90);
   font-weight: 300;
   font-size: 20px;
   opacity: 0;
   transition: opacity 0.8s;
-  margin-bottom: 200px;
-  padding: 20px;
-  min-height: 100px;
 }
 
 #credits {
@@ -115,6 +107,7 @@ body, html {
   z-index: 2;
 }
 
+/* Rest of your CSS remains the same */
 a {
   color: white;
   text-decoration: none;
