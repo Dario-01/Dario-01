@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const credits = document.getElementById('credits')
   const by = document.createElement('p')
   by.innerHTML =
-    'Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com/wallpapers?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+    'Dario Amini'
   credits.appendChild(by)
   credits.style.opacity = '0.6'
   document.getElementById('overlay').style.opacity = '0.8'
