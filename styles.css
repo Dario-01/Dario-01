@@ -12,31 +12,15 @@ body, html {
   overflow-x: hidden;
 }
 
-#video-background {
+#background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -2;
-}
-
-#video-background video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-#overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Adjust transparency here */
-  z-index: -1;
-  opacity: 1;
-  transition: opacity 3s;
-  top: 0;
-  left: 0;
+  background-size: cover;
+  background-position: center;
 }
 
 #overlay {
@@ -47,10 +31,12 @@ body, html {
   z-index: -1;
   opacity: 1;
   transition: opacity 3s;
+  top: 0;
+  left: 0;
 }
 
 #input-placeholder {
-  position: absolute; /* Changed from fixed to absolute */
+  position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
   color: rgba(255, 255, 255, 0.6);
@@ -59,13 +45,13 @@ body, html {
   opacity: 0;
   transition: opacity 0.5s;
   z-index: 2;
-  margin-top: 20px; /* Added margin top */
+  margin-top: 20px;
 }
 
 #input-container {
-  position: relative; /* Changed from fixed to relative */
+  position: relative;
   width: 60%;
-  margin: 40px auto; /* Center container and add margin */
+  margin: 40px auto;
   opacity: 0;
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.80);
   z-index: 2;
@@ -97,13 +83,23 @@ body, html {
 #response-container {
   position: relative;
   width: 50%;
-  margin: 100px auto 20px auto; /* Center container and add margins */
+  margin: 100px auto 20px auto;
   text-align: center;
   color: rgba(255, 255, 255, 0.90);
   font-weight: 300;
   font-size: 20px;
   opacity: 0;
   transition: opacity 0.8s;
+  line-height: 1.6;
+}
+
+#response-container p {
+  margin-bottom: 1.5em;
+  transition: opacity 0.5s ease;
+}
+
+#response-container p:last-child {
+  margin-bottom: 0;
 }
 
 #credits {
@@ -119,7 +115,6 @@ body, html {
   z-index: 2;
 }
 
-/* Rest of your CSS remains the same */
 a {
   color: white;
   text-decoration: none;
